@@ -2,7 +2,7 @@ job('build-and-test-project') {
     scm {
         git {
             remote {
-                github('kubix-io-ltd/hello-world-java-jenkins-dsl', 'ssh')
+                github('kubix-io-ltd/hello-world-java-jenkins-dsl', 'https')
                 credentials('GithubCredentials')
             }
         }
