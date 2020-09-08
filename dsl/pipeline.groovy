@@ -1,6 +1,11 @@
 job('build-and-test-project') {
     scm {
-        git('https://github.com/kubix-io-ltd/hello-world-java-jenkins-dsl')
+        git {
+            remote {
+                github('kubix-io-ltd/hello-world-java-jenkins-dsl', 'ssh')
+                credentials('GithubCredentials')
+            }
+        }
     }
     jdk('jdk-1.11')
     steps {
