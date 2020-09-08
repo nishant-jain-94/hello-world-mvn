@@ -1,6 +1,6 @@
 job('build-and-test-project') {
     scm {
-        git('')
+        git('https://github.com/kubix-io-ltd/hello-world-java-jenkins-dsl')
     }
     jdk('jdk-1.11')
     steps {
