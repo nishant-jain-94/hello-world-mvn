@@ -7,7 +7,7 @@ job('build-and-test-project') {
             }
         }
     }
-    jdk('jdk-11')
+    jdk('Java 8')
     steps {
         maven {
             mavenInstallation('maven3')
