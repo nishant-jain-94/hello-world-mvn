@@ -1,0 +1,28 @@
+# ---
+# apiVersion: build.openshift.io/v1
+# kind: BuildConfig
+# metadata:
+#   name: hello-ocp-build
+# spec:
+#   source:
+#     git:
+#       ref: master
+#       uri: 'https://github.com/nishant-jain-94/hello-world-mvn'
+#     type: Git
+#   strategy:
+#     type: Docker
+#     dockerStrategy:
+#       from:
+#         kind: "ImageStreamTag"
+
+#   output:
+#     to: 
+#       kind: ImageStreamTag
+#       name: hello-ocp:v0.0.1
+#   triggers:
+#     - type: ConfigChange
+# ---
+# apiVersion: v1
+# kind: ImageStream
+# metadata:
+#   name: hello-ocp
