@@ -1,15 +1,15 @@
 pipeline {
     agent any
+    tools {
+        maven '3.3.9'
+        jdk 'jdk11'
+    }
     stages {
         stage('Build') {
             jdk('openjdk-11')
             steps {
-                maven {
-                    mavenInstallation('maven3')
-                    goals('compile')
-                    goals('package')
-                    goals('test')
-                } 
+                sh 'mvn test'
+                sh 'mvn build'
             }
         }
     }
