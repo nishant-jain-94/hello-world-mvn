@@ -9,6 +9,11 @@ pipeline {
             steps {
                 sh 'mvn test'
                 sh 'mvn install'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
                 script {
                     openshift.withClusters('my-ocp-cluster') {
                         openshift.withProject('hello-world') {
