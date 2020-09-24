@@ -6,7 +6,6 @@ pipeline {
     }
     stages {
         stage('Build') {
-            jdk('openjdk-11')
             steps {
                 sh 'mvn test'
                 sh 'mvn build'
