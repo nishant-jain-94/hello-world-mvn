@@ -19,8 +19,8 @@ pipeline {
                         openshift.withCluster('my-ocp-cluster') {
                             openshift.withProject('hello-world') {
                                 openshift.raw('get pods')
-                                // openshift.raw("new-app fabric8/s2i-java~https://github.com/nishant-jain-94/hello-world-mvn.git")
-                                // openshift.raw("oc expose svc/hello-world-mvn --port=8080")
+                                openshift.raw("new-app fabric8/s2i-java~https://github.com/nishant-jain-94/hello-world-mvn.git")
+                                openshift.raw("oc expose svc/hello-world-mvn --port=8080")
                             }
                         }
                     }
